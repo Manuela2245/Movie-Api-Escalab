@@ -1,0 +1,20 @@
+import React from 'react';
+import FiveStarRating from "../FiveStarRating/FiveStarRating";
+import s from "./style.module.css";
+
+const TVShowDetail = (props) => {
+  const rating= props.tvShow.vote_average / 2;
+  return (
+    <div>
+      <div className={s.title}>{props.tvShow.name}</div>
+      <div className={s.rating_container}>
+        <FiveStarRating 
+        rating={rating}/>
+        <span className={s.rating}>{rating}/5</span>
+      </div>
+      <div className={s.overview}>{props.tvShow.overview}</div>
+    </div>
+  )
+}
+
+export default TVShowDetail
